@@ -3,6 +3,9 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
+// Routes
+import userRoute from './routes/userRoute.js';
+
 const app = express();
 
 // Middlewares
@@ -26,3 +29,6 @@ conntectDB();
 app.listen(PORT, () =>
   console.log(`Server is Running on Port ${PORT} 😂😂😂😂`)
 );
+
+// Routes
+app.use('/api/users', userRoute);
