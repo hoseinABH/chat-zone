@@ -5,9 +5,9 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 // Routes
 import userRoute from './routes/userRoute.js';
+import postRoute from './routes/postRoute.js';
 
 const app = express();
-
 // Middlewares
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
@@ -32,3 +32,4 @@ app.listen(PORT, () =>
 
 // Routes
 app.use('/api/users', userRoute);
+app.use('/api/posts', postRoute);
